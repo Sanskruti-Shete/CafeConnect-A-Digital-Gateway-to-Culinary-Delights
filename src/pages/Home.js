@@ -17,10 +17,15 @@ import {
   faTwitter 
 } from '@fortawesome/free-brands-svg-icons';
 
-// You would need to create these CSS files or convert to styled components
 import './Home.css';
 import './Chatbot.css';
 import './Wheel.css';
+
+import coffee1 from '../images/coffee1.png'
+import coffee2 from '../images/coffee2.png'
+import cappuccino from '../images/cappuccino.jpg'
+import latte from '../images/latte.jpg'
+import espresso from '../images/espresso.jpg'
 
 class CoffeShop extends Component {
   constructor(props) {
@@ -71,7 +76,12 @@ class CoffeShop extends Component {
         prize: selectedPrize
       });
       
-      document.getElementById('wheel-result').style.display = 'block';
+      if (selectedPrize) {
+        document.getElementById('wheel-result').style.display = 'block';
+        document.getElementById('prize').textContent = selectedPrize;
+        document.getElementById('coupon-title').textContent = selectedPrize.toUpperCase();
+      }
+
       document.getElementById('prize').textContent = selectedPrize;
       document.getElementById('coupon-title').textContent = selectedPrize.toUpperCase();
     }, 3000);
@@ -166,25 +176,25 @@ class CoffeShop extends Component {
           </div>
         </section>
 
-        <img src="/coffee1.png" alt="Coffee Cup" id="coffee1" />
-        <img src="/coffee2.png" alt="Coffee Beans" id="coffee2" />
+        <img src={coffee1} alt="Coffee Cup" id="coffee1" />
+        <img src={coffee2} alt="Coffee Beans" id="coffee2" />
 
         {/* Products Section */}
         <section className="products">
           <h2 className="section-title">Our Bestsellers</h2>
           <div className="product-grid">
             <div className="product-card">
-              <img src="/cappuccino.jpg" alt="Cappuccino" className="product-image" />
+              <img src={cappuccino} alt="Cappuccino" className="product-image" />
               <h3>Classic Cappuccino</h3>
               <p>$4.99</p>
             </div>
             <div className="product-card">
-              <img src="/latte.jpg" alt="Latte" className="product-image" />
+              <img src={latte} alt="Latte" className="product-image" />
               <h3>Caramel Latte</h3>
               <p>$5.49</p>
             </div>
             <div className="product-card">
-              <img src="/espresso.jpg" alt="Espresso" className="product-image" />
+              <img src={espresso} alt="Espresso" className="product-image" />
               <h3>Double Espresso</h3>
               <p>$3.99</p>
             </div>
