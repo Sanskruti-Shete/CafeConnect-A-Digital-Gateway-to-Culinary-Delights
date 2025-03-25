@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signupbody {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #2c1810, #4a2c22);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+@keyframes float {
+    0%, 100% {
+        transform: rotate(45deg) translate(0, 0);
+    }
+    50% {
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+.signupcontainer {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signupheader {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.signupheader img {
+    width: auto;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.signupheader h1 {
+    color: #2c1810;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.signupform {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formgroup {
+    position: relative;
+}
+
+.formgroup input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.formgroup input:focus {
+    border-color: #8b4513;
+}
+
+.formgroup label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 16px;
+}
+
+.formgroup input:focus + label,
+.formgroup input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+    padding: 0 5px;
+    background: white;
+    color: #8b4513;
+}
+
+button {
+    background: #8b4513;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #6b3410;
+    transform: translateY(-2px);
+}
+
+.loginlink {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.loginlink a {
+    color: #8b4513;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.loginlink a:hover {
+    color: #6b3410;
+}
+
+.terms {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 15px;
+}
+
+#joinmsg{
+    color: #4a2c22;
+}

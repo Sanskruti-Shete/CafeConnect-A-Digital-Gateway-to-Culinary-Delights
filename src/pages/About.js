@@ -15,14 +15,19 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import './About.css'; // Make sure to create this CSS file
 
+import barista from "../images/barista.jpg";
+import chef from "../images/chef.jpg";
+import manager from "../images/manager.jpg";
+import shop from "../images/shop.jpg";
+
 class About extends React.Component {
   render() {
     return (
-      <div className="about-container">
+      <div className="aboutcontainer">
         {/* Navbar */}
         <nav className="navbar">
           <div className="logo">CafeConnect</div>
-          <div className="nav-links">
+          <div className="navlinks">
             <Link to="/">Home</Link>
             <Link to="/menu">Menu</Link>
             <Link to="/about">About</Link>
@@ -35,19 +40,19 @@ class About extends React.Component {
         </nav>
 
         {/* Hero Section */}
-        <section className="hero-about">
-          <div className="hero-content">
-            <h1 className="hero-title">Our Story</h1>
+        <section className="heroabout1">
+          <div className="herocontent1">
+            <h1 className="herotitle1">Our Story</h1>
             <p>Crafting memorable moments, one cup at a time</p>
           </div>
         </section>
 
         {/* Story Section */}
-        <section className="story-section">
-          <div className="story-image">
-            <img src="/images/shop.jpg" alt="Our Coffee Shop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <section className="storysection">
+          <div className="storyimage">
+            <img src={shop} alt="Our Coffee Shop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
-          <div className="story-content">
+          <div className="storycontent">
             <h2>A Journey of Passion</h2>
             <p>Founded in 2020, CafeConnect emerged from a simple yet powerful vision: to create a space where exceptional coffee meets genuine community. Our journey began with a deep appreciation for the art of coffee-making and a desire to share that passion with others.</p>
             <br />
@@ -58,40 +63,40 @@ class About extends React.Component {
         </section>
 
         {/* Values Section */}
-        <section className="values-section">
+        <section className="valuessection">
           <h2 style={{ textAlign: 'center' }}>Our Values</h2>
-          <div className="values-grid">
-            <div className="value-card">
+          <div className="valuesgrid">
+            <div className="valuecard">
               <FontAwesomeIcon 
                 icon={faHeart} 
-                className="feature-icon" 
+                className="featureicon" 
                 style={{ fontSize: '40px', color: '#8b4513', marginBottom: '20px' }} 
               />
               <h3>Passion</h3>
               <p>We pour our heart into every cup, ensuring each drink tells a story of dedication and love for coffee.</p>
             </div>
-            <div className="value-card">
+            <div className="valuecard">
               <FontAwesomeIcon 
                 icon={faHandsHelping} 
-                className="feature-icon" 
+                className="featureicon" 
                 style={{ fontSize: '40px', color: '#8b4513', marginBottom: '20px' }} 
               />
               <h3>Community</h3>
               <p>More than a coffee shop, we're a gathering place where connections are made and community thrives.</p>
             </div>
-            <div className="value-card">
+            <div className="valuecard">
               <FontAwesomeIcon 
                 icon={faLeaf} 
-                className="feature-icon" 
+                className="featureicon" 
                 style={{ fontSize: '40px', color: '#8b4513', marginBottom: '20px' }} 
               />
               <h3>Sustainability</h3>
               <p>We're committed to ethical sourcing and environmental responsibility in every aspect of our operation.</p>
             </div>
-            <div className="value-card">
+            <div className="valuecard">
               <FontAwesomeIcon 
                 icon={faStar} 
-                className="feature-icon" 
+                className="featureicon" 
                 style={{ fontSize: '40px', color: '#8b4513', marginBottom: '20px' }} 
               />
               <h3>Excellence</h3>
@@ -101,22 +106,22 @@ class About extends React.Component {
         </section>
 
         {/* Timeline Section */}
-        <section className="timeline-section">
+        <section className="timelinesection">
           <h2 style={{ textAlign: 'center' }}>Our Journey</h2>
           <div className="timeline">
-            <div className="timeline-item">
+            <div className="timelineitem">
               <h3>2020</h3>
               <p>CafeConnect opens its doors during challenging times</p>
             </div>
-            <div className="timeline-item">
+            <div className="timelineitem">
               <h3>2021</h3>
               <p>Launched virtual coffee workshops and home delivery service</p>
             </div>
-            <div className="timeline-item">
+            <div className="timelineitem">
               <h3>2022</h3>
               <p>Expanded our sustainable coffee sourcing program</p>
             </div>
-            <div className="timeline-item">
+            <div className="timelineitem">
               <h3>2023</h3>
               <p>Opened our second location and training center</p>
             </div>
@@ -124,21 +129,21 @@ class About extends React.Component {
         </section>
 
         {/* Team Section */}
-        <section className="team-section">
+        <section className="teamsection">
           <h2 style={{ textAlign: 'center' }}>Meet Our Team</h2>
-          <div className="team-grid">
-            <div className="team-member">
-              <img src="/images/barista.jpg" alt="Sarah Johnson" className="member-image" />
+          <div className="teamgrid">
+            <div className="teammember">
+              <img src={barista} alt="Sarah Johnson" className="memberimage" />
               <h3>Sarah Johnson</h3>
               <p>Master Barista</p>
             </div>
-            <div className="team-member">
-              <img src="/images/chef.jpg" alt="Michael Chen" className="member-image" />
+            <div className="teammember">
+              <img src={chef} alt="Michael Chen" className="memberimage" />
               <h3>Michael Chen</h3>
               <p>Head of Coffee</p>
             </div>
-            <div className="team-member">
-              <img src="/images/manager.jpg" alt="Emma Rodriguez" className="member-image" />
+            <div className="teammember">
+              <img src={manager} alt="Emma Rodriguez" className="memberimage" />
               <h3>Emma Rodriguez</h3>
               <p>Community Manager</p>
             </div>
@@ -147,11 +152,11 @@ class About extends React.Component {
 
         {/* Footer */}
         <footer>
-          <div className="footer-grid contact">
+          <div className="footergrid contact">
             <div>
               <h3>About Us</h3>
               <p>Your perfect spot for great coffee and warm conversations.</p>
-              <div className="social-links">
+              <div className="sociallinks">
                 <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
                 <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
                 <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>

@@ -1,0 +1,508 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.accountbody {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #2c1810, #4a2c22);
+    color: white;
+    overflow-x: hidden;
+}
+
+.coffee-bean {
+    position: fixed;
+    width: 40px;
+    height: 60px;
+    background: rgba(139, 69, 19, 0.2);
+    border-radius: 50%;
+    transform: rotate(45deg);
+    animation: float 6s infinite;
+    z-index: 1;
+}
+
+.coffee-bean:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.coffee-bean:nth-child(2) { top: 70%; left: 80%; animation-delay: 2s; }
+.coffee-bean:nth-child(3) { top: 30%; right: 20%; animation-delay: 4s; }
+
+/* Navbar Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #8b4513;
+}
+
+.nav-links a i.fas.fa-user {
+    margin-right: 5px;
+}
+
+/* Account Header */
+.accountheader {
+    padding: 140px 5% 60px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.accountcontainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.accountheader h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+/* Account Dashboard */
+.accountdashboard {
+    padding: 40px 5% 80px;
+}
+
+.dashboardgrid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+}
+
+/* Account Sidebar */
+.accountsidebar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.userprofile {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profileimage {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 15px;
+}
+
+.profileimage i {
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.userprofile h3 {
+    margin-bottom: 5px;
+}
+
+.userprofile p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.accountbtn {
+    background: #8b4513;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.accountbtn:hover {
+    background: #a05a2c;
+}
+
+.editprofilebtn {
+    background: transparent;
+    border: 1px solid #8b4513;
+}
+
+.editprofilebtn:hover {
+    background: rgba(139, 69, 19, 0.2);
+}
+
+.accountmenu {
+    padding: 20px 0;
+}
+
+.menuitem {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menuitem i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.menuitem:hover, .menu-item.active {
+    background: rgba(139, 69, 19, 0.2);
+    color: #8b4513;
+}
+
+.menuitem.logout {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.menuitem.logout:hover {
+    color: #ff5c5c;
+    background: rgba(255, 92, 92, 0.1);
+}
+
+/* Account Content */
+.accountcontent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.accountwelcome {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.accountwelcome h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.accountwelcome p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Stats Container */
+.statscontainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.statcard {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.staticon {
+    width: 50px;
+    height: 50px;
+    background: rgba(139, 69, 19, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.staticon i {
+    font-size: 24px;
+    color: #8b4513;
+}
+
+.statinfo h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.statinfo p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+/* Recent Orders */
+.recentorders {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.sectionheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sectionheader h3 {
+    font-size: 20px;
+}
+
+.viewall {
+    color: #8b4513;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.viewall:hover {
+    color: #a05a2c;
+    text-decoration: underline;
+}
+
+.orderlist {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.orderitem {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.orderitem:hover {
+    transform: translateX(5px);
+}
+
+.orderimage {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.orderimage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.orderdetails {
+    flex: 1;
+}
+
+.orderdetails h4 {
+    margin-bottom: 5px;
+}
+
+.orderdetails p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.orderprice {
+    text-align: right;
+    min-width: 100px;
+}
+
+.orderprice h4 {
+    color: #8b4513;
+    margin-bottom: 5px;
+}
+
+.orderstatus {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.orderstatus.delivered {
+    background: rgba(0, 180, 0, 0.2);
+    color: #00b400;
+}
+
+.orderstatus.processing {
+    background: rgba(255, 166, 0, 0.2);
+    color: #ffa600;
+}
+
+/* Subscription Card */
+.subscriptioncard {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 30px;
+    position: relative;
+}
+
+.subscriptioncontent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subscriptiontext {
+    max-width: 60%;
+}
+
+.subscriptiontext h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #8b4513;
+}
+
+.subscriptiontext p {
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.subscriptionbenefits {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.subscriptionbenefits li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.subscriptionbenefits li i {
+    color: #8b4513;
+    margin-right: 10px;
+}
+
+.subscriptionimage {
+    width: 150px;
+    height: 150px;
+    background: rgba(139, 69, 19, 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscriptionimage i {
+    font-size: 80px;
+    color: #8b4513;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 50px 5% 20px;
+}
+
+.footergrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.sociallinks {
+    display: flex;
+    gap: 15px;
+}
+
+.sociallinks a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.sociallinks a:hover {
+    color: #8b4513;
+}
+
+.quicklinks {
+    color: white;
+    text-decoration: none;
+    line-height: 2;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: rotate(45deg) translate(0, 0); }
+    50% { transform: rotate(45deg) translate(20px, 20px); }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .dashboardgrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .accountsidebar {
+        position: sticky;
+        top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 5%;
+    }
+
+    .navlinks {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .accountheader {
+        padding: 180px 5% 60px;
+    }
+    
+    .statscontainer {
+        grid-template-columns: 1fr;
+    }
+    
+    .subscriptioncontent {
+        flex-direction: column;
+    }
+    
+    .subscriptiontext {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+}
