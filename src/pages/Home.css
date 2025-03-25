@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 
-.coffee-bean {
+.coffeebean {
   position: fixed;
   width: 40px;
   height: 60px;
@@ -23,9 +23,9 @@ body {
   z-index: 1;
 }
 
-.coffee-bean:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
-.coffee-bean:nth-child(2) { top: 70%; left: 80%; animation-delay: 2s; }
-.coffee-bean:nth-child(3) { top: 30%; right: 20%; animation-delay: 4s; }
+.coffeebean:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.coffeebean:nth-child(2) { top: 70%; left: 80%; animation-delay: 2s; }
+.coffeebean:nth-child(3) { top: 30%; right: 20%; animation-delay: 4s; }
 
 /* Navbar Styles */
 .navbar {
@@ -46,18 +46,18 @@ body {
   height: 40px;
 }
 
-.nav-links {
+.navlinks {
   display: flex;
   gap: 30px;
 }
 
-.nav-links a {
+.navlinks a {
   color: white;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
+.navlinks a:hover {
   color: #8b4513;
 }
 
@@ -70,7 +70,7 @@ body {
   position: relative;
 }
 
-.hero-content {
+.herocontent {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   padding: 40px;
@@ -79,7 +79,7 @@ body {
   animation: fadeIn 0.8s ease-out;
 }
 
-.hero-title {
+.herotitle {
   font-size: 48px;
   margin-bottom: 20px;
 }
@@ -108,19 +108,19 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.section-title {
+.sectiontitle {
   text-align: center;
   font-size: 36px;
   margin-bottom: 40px;
 }
 
-.product-grid {
+.productgrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
-.product-card {
+.productcard {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -129,11 +129,11 @@ body {
   transition: transform 0.3s ease;
 }
 
-.product-card:hover {
+.productcard:hover {
   transform: translateY(-10px);
 }
 
-.product-image {
+.productimage {
   width: 150px;
   height: 150px;
   object-fit: cover;
@@ -146,14 +146,14 @@ body {
   padding: 80px 5%;
 }
 
-.review-slider {
+.reviewslider {
   display: flex;
   gap: 30px;
   overflow-x: auto;
   padding: 20px 0;
 }
 
-.review-card {
+.reviewcard {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -168,13 +168,13 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.feature-grid {
+.featuregrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
-.feature-card {
+.featurecard {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -182,7 +182,7 @@ body {
   text-align: center;
 }
 
-.feature-icon {
+.featureicon {
   font-size: 40px;
   color: #8b4513;
   margin-bottom: 20px;
@@ -193,7 +193,7 @@ body {
   padding: 80px 5%;
 }
 
-.contact-form {
+.contactform {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -202,12 +202,12 @@ body {
   margin: 0 auto;
 }
 
-.form-group {
+.formgroup {
   margin-bottom: 20px;
 }
 
-.form-group input,
-.form-group textarea {
+.formgroup input,
+.formgroup textarea {
   width: 100%;
   padding: 15px;
   background: rgba(255, 255, 255, 0.1);
@@ -217,7 +217,7 @@ body {
   margin-top: 5px;
 }
 
-.submit-btn {
+.submitbtn {
   background: #8b4513;
   color: white;
   padding: 15px 30px;
@@ -227,7 +227,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-.submit-btn:hover {
+.submitbtn:hover {
   transform: translateY(-3px);
 }
 
@@ -238,25 +238,25 @@ footer {
   padding: 50px 5% 20px;
 }
 
-.footer-grid {
+.footergrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   margin-bottom: 30px;
 }
 
-.social-links {
+.sociallinks {
   display: flex;
   gap: 15px;
 }
 
-.social-links a {
+.sociallinks a {
   color: white;
   font-size: 20px;
   transition: color 0.3s ease;
 }
 
-.social-links a:hover {
+.sociallinks a:hover {
   color: #8b4513;
 }
 
@@ -294,22 +294,22 @@ footer {
       gap: 20px;
   }
 
-  .nav-links {
+  .navlinks {
       flex-direction: column;
       text-align: center;
   }
 
-  .hero-title {
+  .herotitle {
       font-size: 36px;
   }
 }
-.button-container {
+.buttoncontainer {
   display: flex;
   gap: 20px;
   margin-top: 20px;
 }
 
-.hero-btn {
+.herobtn {
   background: #8b4513;
   color: white;
   padding: 12px 24px;
@@ -321,34 +321,34 @@ footer {
   text-decoration: none;
 }
 
-.hero-btn:hover {
+.herobtn:hover {
   background: #a05a2c;
 }
 
-.reserve-btn {
+.reservebtn {
   background: transparent;
   border: 2px solid #8b4513;
 }
 
-.reserve-btn:hover {
+.reservebtn:hover {
   background: rgba(139, 69, 19, 0.2);
 }
 
-.eco-section {
+.ecosection {
   padding: 80px 5%;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   margin: 40px 0;
 }
 
-.eco-grid {
+.ecogrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 40px;
 }
 
-.eco-card {
+.ecocard {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -358,11 +358,11 @@ footer {
   overflow: hidden;
 }
 
-.eco-card:hover {
+.ecocard:hover {
   transform: translateY(-10px);
 }
 
-.eco-card::before {
+.ecocard::before {
   content: '';
   position: absolute;
   top: 0;
@@ -372,38 +372,38 @@ footer {
   background: #8b4513;
 }
 
-.eco-icon {
+.ecoicon {
   font-size: 40px;
   color: #8b4513;
   margin-bottom: 20px;
 }
 
-.eco-title {
+.ecotitle {
   font-size: 24px;
   margin-bottom: 15px;
   color: white;
 }
 
-.eco-description {
+.ecodescription {
   color: #ddd;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-.eco-stats {
+.ecostats {
   background: rgba(139, 69, 19, 0.1);
   padding: 15px;
   border-radius: 10px;
   margin-top: 15px;
 }
 
-.eco-stat {
+.ecostat {
   font-size: 24px;
   color: #8b4513;
   margin-bottom: 5px;
 }
 
-.eco-progress {
+.ecoprogress {
   width: 100%;
   height: 20px;
   background: rgba(255, 255, 255, 0.1);
@@ -412,20 +412,20 @@ footer {
   margin-top: 15px;
 }
 
-.eco-progress-bar {
+.ecoprogressbar {
   height: 100%;
   background: #8b4513;
   border-radius: 10px;
   transition: width 1s ease;
 }
 
-.eco-badges {
+.ecobadges {
   display: flex;
   gap: 10px;
   margin-top: 15px;
 }
 
-.eco-badge {
+.ecobadge {
   background: rgba(139, 69, 19, 0.2);
   padding: 5px 10px;
   border-radius: 20px;
@@ -433,7 +433,7 @@ footer {
   color: white;
 }
 
-.section-intro {
+.sectionintro {
   max-width: 800px;
   margin: 0 auto 40px;
   text-align: center;
@@ -442,14 +442,14 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .eco-grid {
+  .ecogrid {
       grid-template-columns: 1fr;
   }
 }
-.nav-links a i.fas.fa-user {
+.navlinks a i.fas.fa-user {
   margin-right: 5px;
 }
 
-.nav-links a:hover i.fas.fa-user {
+.navlinks a:hover i.fas.fa-user {
   color: #8b4513;
 }

@@ -1,5 +1,5 @@
 /* Chatbot icon styling */
-.chat-icon {
+.chaticon {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -17,7 +17,7 @@
   }
   
   /* Chat window styling */
-  .chat-container {
+  .chatcontainer {
     position: fixed;
     bottom: 90px;
     right: 20px;
@@ -32,7 +32,7 @@
     z-index: 1000;
   }
   
-  .chat-header {
+  .chatheader {
     background-color: #6F4E37;
     color: white;
     padding: 15px;
@@ -41,7 +41,7 @@
     align-items: center;
   }
   
-  .chat-body {
+  .chatbody {
     flex: 1;
     padding: 15px;
     overflow-y: auto;
@@ -54,23 +54,23 @@
     border-radius: 10px;
   }
   
-  .user-message {
+  .usermessage {
     background-color: grey;
     margin-left: auto;
   }
   
-  .bot-message {
+  .botmessage {
     background-color:#8b4513;
     margin-right: auto;
   }
   
-  .chat-input-container {
+  .chatinputcontainer {
     display: flex;
     padding: 10px;
     border-top: 1px solid #E6E6E6;
   }
   
-  #chat-input {
+  #chatinput {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
@@ -78,7 +78,7 @@
     outline: none;
   }
   
-  #send-button {
+  #sendbutton {
     background-color: #6F4E37;
     color: white;
     border: none;
@@ -92,7 +92,7 @@
     display: flex;
   }
   
-  #typing-indicator {
+  #typingindicator {
     font-style: italic;
     color: #888;
   }

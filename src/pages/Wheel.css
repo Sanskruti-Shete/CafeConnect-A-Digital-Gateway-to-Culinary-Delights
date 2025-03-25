@@ -1,5 +1,5 @@
 /* Wheel Icon Styles */
-.wheel-icon {
+.wheelicon {
     position: fixed;
     bottom: 30px;
     left: 30px;
@@ -17,17 +17,17 @@
     transition: all 0.3s ease;
   }
   
-  .wheel-icon:hover {
+  .wheelicon:hover {
     transform: scale(1.1);
     background: #a05a2c;
   }
   
-  .wheel-icon i {
+  .wheelicon i {
     font-size: 24px;
     color: white;
   }
   
-  .wheel-label {
+  .wheellabel {
     position: absolute;
     bottom: -25px;
     font-size: 12px;
@@ -40,12 +40,12 @@
     transition: opacity 0.3s ease;
   }
   
-  .wheel-icon:hover .wheel-label {
+  .wheelicon:hover .wheellabel {
     opacity: 1;
   }
   
   /* Popup Styles */
-  .wheel-popup {
+  .wheelpopup {
     display: none;
     position: fixed;
     top: 0;
@@ -59,7 +59,7 @@
     backdrop-filter: blur(5px);
   }
   
-  .wheel-popup-content {
+  .wheelpopupcontent {
     background: linear-gradient(45deg, #2c1810, #4a2c22);
     border-radius: 20px;
     width: 90%;
@@ -78,7 +78,7 @@
     100% { transform: scale(1); opacity: 1; }
   }
   
-  .close-wheel {
+  .closewheel {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -88,27 +88,27 @@
     transition: all 0.3s ease;
   }
   
-  .close-wheel:hover {
+  .closewheel:hover {
     color: #8b4513;
   }
   
-  .wheel-header {
+  .wheelheader {
     text-align: center;
     margin-bottom: 20px;
   }
   
-  .wheel-header h2 {
+  .wheelheader h2 {
     font-size: 28px;
     margin-bottom: 10px;
     color: #8b4513;
   }
   
-  .wheel-header p {
+  .wheelheader p {
     color: #ddd;
   }
   
   /* Wheel Styles */
-  .wheel-container {
+  .wheelcontainer {
     position: relative;
     width: 300px;
     height: 300px;
@@ -125,7 +125,7 @@
     box-shadow: 0 0 0 5px #8b4513, 0 0 0 15px rgba(139, 69, 19, 0.3);
   }
   
-  .wheel-section {
+  .wheelsection {
     position: absolute;
     width: 50%;
     height: 50%;
@@ -138,7 +138,7 @@
     transform: rotate(calc(60deg * (var(--i) - 1)));
   }
   
-  .wheel-section span {
+  .wheelsection span {
     position: absolute;
     left: 30px;
     top: 30px;
@@ -151,7 +151,7 @@
     text-align: center;
   }
   
-  .wheel-arrow {
+  .wheelarrow {
     position: absolute;
     top: -15px;
     left: 50%;
@@ -163,7 +163,7 @@
     z-index: 2;
   }
   
-  .spin-btn {
+  .spinbtn {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -182,17 +182,17 @@
     transition: all 0.3s ease;
   }
   
-  .spin-btn:hover {
+  .spinbtn:hover {
     background: #a05a2c;
   }
   
-  .spin-btn:disabled {
+  .spinbtn:disabled {
     background: #6d3611;
     cursor: not-allowed;
   }
   
   /* Result Styles */
-  .wheel-result {
+  .wheelresult {
     display: none;
     text-align: center;
     margin-top: 20px;
@@ -207,7 +207,7 @@
     100% { opacity: 1; }
   }
   
-  .wheel-result h3 {
+  .wheelresult h3 {
     color: #8b4513;
     font-size: 24px;
     margin-bottom: 10px;
@@ -243,7 +243,7 @@
     transform: translateX(-50%);
   }
   
-  .coupon-content {
+  .couponcontent {
     border: 2px dashed white;
     padding: 15px;
     border-radius: 5px;
@@ -255,20 +255,20 @@
     color: white;
   }
   
-  .coupon #coupon-code {
+  .coupon #couponcode {
     font-weight: bold;
     font-size: 18px;
     letter-spacing: 2px;
     color: white;
   }
   
-  .coupon-expiry {
+  .couponexpiry {
     font-size: 12px;
     margin-top: 5px;
     color: rgba(255, 255, 255, 0.7);
   }
   
-  .claim-btn {
+  .claimbtn {
     background: #8b4513;
     color: white;
     border: none;
@@ -280,7 +280,7 @@
     margin-top: 10px;
   }
   
-  .claim-btn:hover {
+  .claimbtn:hover {
     background: #a05a2c;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -288,12 +288,12 @@
   
   /* Responsive Styles */
   @media (max-width: 768px) {
-    .wheel-container {
+    .wheelcontainer {
       width: 250px;
       height: 250px;
     }
     
-    .wheel-section span {
+    .wheelsection span {
       font-size: 12px;
       left: 25px;
       top: 25px;
