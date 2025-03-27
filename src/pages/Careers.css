@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.careersbody {
+    background: linear-gradient(45deg, #2c1810, #4a2c22);
+    color: white;
+    min-height: 100vh;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px 5%;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navlinks {
+    display: flex;
+    gap: 30px;
+}
+
+.navlinks a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navlinks a:hover {
+    color: #8b4513;
+}
+
+.hero3 {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.hero3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.herocontent3 {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero3 h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.hero3 p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.maincontent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.sectiontitle {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.jobsgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.jobcard {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+}
+
+.jobcard:hover {
+    transform: translateY(-5px);
+}
+
+.jobcard h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #8b4513;
+}
+
+.jobcard .location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    color: #ddd;
+}
+
+.jobcard .description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.applybtn {
+    background: #8b4513;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.applybtn:hover {
+    background: #a05518;
+}
+
+.benefits {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 60px 20px;
+    margin: 40px 0;
+}
+
+.benefitsgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefitcard {
+    text-align: center;
+    padding: 20px;
+}
+
+.benefitcard i {
+    font-size: 2.5em;
+    color: #8b4513;
+    margin-bottom: 20px;
+}
+
+.benefitcard h3 {
+    margin-bottom: 15px;
+}
+
+.ctasection {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(139, 69, 19, 0.1);
+}
+
+.ctasection h2 {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    
+    .navlinks {
+        gap: 15px;
+    }
+}
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 50px 5% 20px;
+}
+
+.footergrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.sociallinks {
+    display: flex;
+    gap: 15px;
+}
+
+.sociallinks a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.sociallinks a:hover {
+    color: #8b4513;
+}
+
+.quicklinks{
+    color:white;
+    text-decoration: none;
+}

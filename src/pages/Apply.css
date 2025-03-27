@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.applybody {
+    background: linear-gradient(45deg, #2c1810, #4a2c22);
+    color: white;
+    min-height: 100vh;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px 5%;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navlinks {
+    display: flex;
+    gap: 30px;
+}
+
+.navlinks a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navlinks a:hover {
+    color: #8b4513;
+}
+
+.maincontent1 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 120px 20px 40px;
+}
+
+.applicationform {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.formsection2 {
+    margin-bottom: 30px;
+}
+
+.formsection2 h2 {
+    color: #8b4513;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.formgroup2 {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #8b4513;
+}
+
+select option {
+    background: #2c1810;
+    color: white;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submitbtn {
+    background: #8b4513;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+    width: 100%;
+}
+
+.submitbtn:hover {
+    background: #a05518;
+}
+
+.required {
+    color: #ff4444;
+}
+
+.fileinput {
+    padding: 8px;
+}
+
+.fileinput::-webkit-file-upload-button {
+    background: #8b4513;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .navlinks {
+        gap: 15px;
+    }
+    
+    .applicationform {
+        padding: 20px;
+    }
+}
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 50px 5% 20px;
+}
+
+.footergrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.sociallinks {
+    display: flex;
+    gap: 15px;
+}
+
+.sociallinks a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.sociallinks a:hover {
+    color: #8b4513;
+}
+
+.quicklinks{
+    color:white;
+    text-decoration: none;
+}
