@@ -13,7 +13,7 @@ import {
   faInstagram, 
   faTwitter 
 } from '@fortawesome/free-brands-svg-icons';
-import './About.css'; // Make sure to create this CSS file
+import '../styles/About.css'; // Make sure to create this CSS file
 
 import barista from "../images/barista.jpg";
 import chef from "../images/chef.jpg";

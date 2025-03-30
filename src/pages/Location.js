@@ -19,7 +19,12 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import "./Location.css"
+import "../styles/Location.css"
+
+import cafe1 from '../images/cafe1.jpg';
+import cafe2 from '../images/cafe2.jpg';
+import cafe3 from '../images/cafe3.jpg';
+import cafe4 from '../images/cafe4.jpg';
 
 class LocationsPage extends Component {
   constructor(props) {
@@ -37,7 +42,7 @@ class LocationsPage extends Component {
             weekends: "Saturday - Sunday: 7:30 AM - 6:00 PM",
           },
           phone: "(555) 123-4567",
-          image: "cafe1.jpg",
+          image: cafe1,
           features: [
             { icon: faWifi, text: "Free Wi-Fi" },
             { icon: faParking, text: "Parking" },
@@ -56,7 +61,7 @@ class LocationsPage extends Component {
             weekends: "Saturday - Sunday: 8:00 AM - 10:00 PM",
           },
           phone: "(555) 456-7890",
-          image: "cafe2.jpg",
+          image: cafe2,
           features: [
             { icon: faWifi, text: "Free Wi-Fi" },
             { icon: faGuitar, text: "Live Music" },
@@ -75,7 +80,7 @@ class LocationsPage extends Component {
             weekends: "Saturday - Sunday: 7:00 AM - 11:00 PM",
           },
           phone: "(555) 789-0123",
-          image: "cafe3.jpg",
+          image: cafe3,
           features: [
             { icon: faWifi, text: "Free Wi-Fi" },
             { icon: faBook, text: "Study Spaces" },
@@ -94,7 +99,7 @@ class LocationsPage extends Component {
             weekends: "Saturday - Sunday: 8:00 AM - 11:00 PM",
           },
           phone: "(555) 234-5678",
-          image: "cafe4.jpg",
+          image: cafe4,
           features: [
             { icon: faWifi, text: "Free Wi-Fi" },
             { icon: faUtensils, text: "Local Cuisine" },

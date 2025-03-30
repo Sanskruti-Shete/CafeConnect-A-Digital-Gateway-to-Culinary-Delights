@@ -14,7 +14,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
-import "./Careers.css";
+import "../styles/Careers.css";
 
 class Careers extends Component {
   render() {

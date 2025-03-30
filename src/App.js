@@ -8,7 +8,7 @@ import Reserve from "./pages/Reserve";
 import Careers from "./pages/Careers";
 import Apply from "./pages/Apply";
 import Location from "./pages/Location";
-
+import Menu from "./pages/Menu";
 
 
 function App() {
@@ -24,6 +24,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/apply" element={<Apply />} />
         <Route path="/location" element={<Location />} />
+        <Route path="/menu" element={<Menu />} />
       </Routes>
     </BrowserRouter>
   );

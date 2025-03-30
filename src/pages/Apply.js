@@ -6,7 +6,7 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import "./Apply.css";
+import "../styles/Apply.css";
 
 class Apply extends Component {
   constructor(props) {

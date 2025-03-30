@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Account.css'; 
+import '../styles/Account.css'; 
 import { FaCoffee, FaHome, FaUser } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
