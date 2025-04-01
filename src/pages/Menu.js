@@ -159,104 +159,104 @@ const Menu = () => {
     {
       name: "Classic Cappuccino",
       description: "Rich espresso topped with silky steamed milk and a perfect layer of foam",
-      image: "cappuccino.png",
+      image: cappuccino,
       price: 2.99
     },
     {
       name: "Caramel Latte",
       description: "Smooth espresso blended with steamed milk and rich caramel syrup",
-      image: "latte.jpg",
+      image: latte,
       price: 2.99
     },
     {
       name: "Double Espresso",
       description: "Intense, full-bodied double shot of our premium roasted coffee",
-      image: "espresso.jpg",
+      image: espresso,
       price: 2.99
     },
     {
       name: "Chocolate Mocha",
       description: "Decadent espresso with rich chocolate and topped with whipped cream",
-      image: "mocha.jpg",
+      image: mocha,
       price: 2.99
     },
     {
       name: "Americano",
       description: "Classic espresso diluted with hot water for a smooth, bold flavor",
-      image: "americano.jpg",
+      image: americano,
       price: 2.99
     },
     {
       name: "Java Chip Frappe",
       description: "Blended coffee with chocolate chips, topped with whipped cream",
-      image: "frappuccino.jpg",
+      image: frappuccino,
       price: 2.99
     }
   ];
 
   const hotDrinks = [
-    { name: "Espresso", description: "Rich and intense single shot of premium coffee", price: 2.99, image: cappuccino },
-    { name: "Green Tea", description: "Premium Japanese green tea, perfectly steeped", price: 3.29, image: "greentea.jpg" },
-    { name: "Hot Chocolate", description: "Rich chocolate with steamed milk and whipped cream", price: 4.29, image: "hotchocolate.jpg" },
-    { name: "Macchiato", description: "Espresso marked with a dollop of foamed milk", price: 3.49, image: "macchiato.jpg" },
-    { name: "Chai Latte", description: "Spiced tea blend with steamed milk and honey", price: 4.49, image: "chai.jpg" },
-    { name: "Classic Cappuccino", description: "Perfectly balanced espresso with velvety steamed milk", price: 3.79, image: "capu.jpg" },
-    { name: "London Fog", description: "Earl Grey tea with vanilla and steamed milk", price: 4.19, image: "londonfog.jpg" },
-    { name: "Long Black", description: "Double shot espresso with hot water", price: 3.29, image: "americano.jpg" },
-    { name: "Herbal Infusion", description: "Calming blend of chamomile, lavender, and mint", price: 3.49, image: "herbal.jpg" },
-    { name: "Matcha Latte", description: "Premium green tea powder with steamed milk", price: 4.79, image: "matcha.jpg" }
+    { name: "Espresso", description: "Rich and intense single shot of premium coffee", price: 2.99, image: espresso1 },
+    { name: "Green Tea", description: "Premium Japanese green tea, perfectly steeped", price: 3.29, image: greentea },
+    { name: "Hot Chocolate", description: "Rich chocolate with steamed milk and whipped cream", price: 4.29, image: hotchocolate },
+    { name: "Macchiato", description: "Espresso marked with a dollop of foamed milk", price: 3.49, image: macchiato },
+    { name: "Chai Latte", description: "Spiced tea blend with steamed milk and honey", price: 4.49, image: chai },
+    { name: "Classic Cappuccino", description: "Perfectly balanced espresso with velvety steamed milk", price: 3.79, image: capu },
+    { name: "London Fog", description: "Earl Grey tea with vanilla and steamed milk", price: 4.19, image: londonfog },
+    { name: "Long Black", description: "Double shot espresso with hot water", price: 3.29, image: americano },
+    { name: "Herbal Infusion", description: "Calming blend of chamomile, lavender, and mint", price: 3.49, image: herbal },
+    { name: "Matcha Latte", description: "Premium green tea powder with steamed milk", price: 4.79, image: matcha }
   ];
 
   const coldDrinks = [
-    { name: "Iced Coffee", description: "Cold brewed coffee served over ice", price: 3.99, image: "icedcoffee.jpg" },
-    { name: "Berry Smoothie", description: "Mixed berries blended with yogurt and honey", price: 5.49, image: "smoothie.jpg" },
-    { name: "Fresh Lemonade", description: "Housemade lemonade with fresh mint", price: 3.99, image: "lemonade.jpg" },
-    { name: "Peach Iced Tea", description: "Fresh brewed tea with peach flavor", price: 3.79, image: "peach.jpg" },
-    { name: "Mango Lassi", description: "Creamy yogurt drink with ripe mango pulp", price: 4.99, image: "lassi.jpg" },
-    { name: "Nitro Cold Brew", description: "Smooth cold brew infused with nitrogen", price: 4.49, image: "nitro.jpg" },
-    { name: "Green Detox Juice", description: "Fresh blend of kale, apple, and cucumber", price: 5.29, image: "greendetox.jpg" },
-    { name: "Fresh Coconut Water", description: "Pure, hydrating coconut water served chilled", price: 3.99, image: "coconut.jpg" },
-    { name: "Passion Fruit Cooler", description: "Refreshing tropical blend with passion fruit", price: 4.79, image: "passionfruit.jpg" },
-    { name: "Strawberry Refresher", description: "Light, fruity drink with fresh strawberry essence", price: 4.29, image: "strawberry.jpg" }
+    { name: "Iced Coffee", description: "Cold brewed coffee served over ice", price: 3.99, image: icedcoffee },
+    { name: "Berry Smoothie", description: "Mixed berries blended with yogurt and honey", price: 5.49, image: smoothie },
+    { name: "Fresh Lemonade", description: "Housemade lemonade with fresh mint", price: 3.99, image: lemonade },
+    { name: "Peach Iced Tea", description: "Fresh brewed tea with peach flavor", price: 3.79, image: peach },
+    { name: "Mango Lassi", description: "Creamy yogurt drink with ripe mango pulp", price: 4.99, image: lassi },
+    { name: "Nitro Cold Brew", description: "Smooth cold brew infused with nitrogen", price: 4.49, image: nitro },
+    { name: "Green Detox Juice", description: "Fresh blend of kale, apple, and cucumber", price: 5.29, image: greendetox },
+    { name: "Fresh Coconut Water", description: "Pure, hydrating coconut water served chilled", price: 3.99, image: coconut },
+    { name: "Passion Fruit Cooler", description: "Refreshing tropical blend with passion fruit", price: 4.79, image: passionfruit },
+    { name: "Strawberry Refresher", description: "Light, fruity drink with fresh strawberry essence", price: 4.29, image: strawberry }
   ];
 
   const foodItems = [
-    { name: "Butter Croissant", description: "Freshly baked flaky croissant", price: 3.49, image: "croissant.jpg" },
-    { name: "Club Sandwich", description: "Triple-decker with turkey, bacon, and avocado", price: 8.99, image: "sandwich.jpg" },
-    { name: "Quinoa Salad", description: "Mixed greens with quinoa and grilled chicken", price: 9.99, image: "salad.jpg" },
-    { name: "Blueberry Muffin", description: "Fresh baked muffin with real blueberries", price: 3.29, image: "muffin.jpg" },
-    { name: "Spinach Feta Quiche", description: "Savory egg tart with spinach and creamy feta cheese", price: 6.99, image: "spinach.jpg" },
-    { name: "Smoked Salmon Bagel", description: "Toasted bagel with cream cheese, smoked salmon, and capers", price: 7.49, image: "bagel.jpg" },
-    { name: "Breakfast Wrap", description: "Scrambled eggs, bacon, cheese in a warm tortilla", price: 5.99, image: "breakfast.jpg" },
-    { name: "Mediterranean Greek Salad", description: "Fresh greens, feta, olives, cucumber, and Greek dressing", price: 8.49, image: "greeksalad.jpg" },
-    { name: "Caprese Panini", description: "Grilled sandwich with fresh mozzarella, tomato, and basil", price: 7.99, image: "panini.jpg" },
-    { name: "Fruit Danish", description: "Buttery pastry filled with seasonal fruit preserves", price: 3.79, image: "danish.jpg" }
+    { name: "Butter Croissant", description: "Freshly baked flaky croissant", price: 3.49, image: croissant },
+    { name: "Club Sandwich", description: "Triple-decker with turkey, bacon, and avocado", price: 8.99, image: sandwich },
+    { name: "Quinoa Salad", description: "Mixed greens with quinoa and grilled chicken", price: 9.99, image: salad },
+    { name: "Blueberry Muffin", description: "Fresh baked muffin with real blueberries", price: 3.29, image: muffin },
+    { name: "Spinach Feta Quiche", description: "Savory egg tart with spinach and creamy feta cheese", price: 6.99, image: spinach },
+    { name: "Smoked Salmon Bagel", description: "Toasted bagel with cream cheese, smoked salmon, and capers", price: 7.49, image: bagel },
+    { name: "Breakfast Wrap", description: "Scrambled eggs, bacon, cheese in a warm tortilla", price: 5.99, image: breakfast },
+    { name: "Mediterranean Greek Salad", description: "Fresh greens, feta, olives, cucumber, and Greek dressing", price: 8.49, image: greeksalad },
+    { name: "Caprese Panini", description: "Grilled sandwich with fresh mozzarella, tomato, and basil", price: 7.99, image: panini },
+    { name: "Fruit Danish", description: "Buttery pastry filled with seasonal fruit preserves", price: 3.79, image: danish }
   ];
 
   const seasonalSpecials = [
-    { name: "Pumpkin Spice Latte", description: "Espresso with pumpkin spice syrup, topped with whipped cream", price: 5.49, image: "pumpkin.jpg" },
-    { name: "Maple Cinnamon Latte", description: "Rich espresso with maple syrup and cinnamon, topped with foam", price: 4.99, image: "maple.jpg" },
-    { name: "Eggnog Latte", description: "Holiday favorite with espresso, steamed eggnog, and nutmeg", price: 5.29, image: "eggnog.jpg" },
-    { name: "Gingerbread Latte", description: "Espresso with gingerbread spices and whipped cream", price: 4.99, image: "gingerbread.jpg" },
-    { name: "Spiced Apple Cider", description: "Warm apple cider with cinnamon, cloves, and orange zest", price: 4.49, image: "cider.jpg" },
-    { name: "Peppermint Mocha", description: "Chocolate espresso with peppermint, topped with candy cane pieces", price: 5.29, image: "peppermint.jpg" },
-    { name: "Caramel Brulée Latte", description: "Espresso with caramel brulée sauce and whipped cream", price: 5.49, image: "caramel.jpg" },
-    { name: "Cherry Blossom Tea", description: "Seasonal white tea infused with cherry blossom flavors", price: 4.29, image: "cherry.jpg" },
-    { name: "Irish Cream Cold Brew", description: "Cold brew with Irish cream flavored foam", price: 4.79, image: "irish.jpg" },
-    { name: "Lavender Honey Latte", description: "Espresso with lavender-infused honey and steamed milk", price: 5.19, image: "lavender.jpg" }
+    { name: "Pumpkin Spice Latte", description: "Espresso with pumpkin spice syrup, topped with whipped cream", price: 5.49, image: pumpkin },
+    { name: "Maple Cinnamon Latte", description: "Rich espresso with maple syrup and cinnamon, topped with foam", price: 4.99, image: maple },
+    { name: "Eggnog Latte", description: "Holiday favorite with espresso, steamed eggnog, and nutmeg", price: 5.29, image: eggnog },
+    { name: "Gingerbread Latte", description: "Espresso with gingerbread spices and whipped cream", price: 4.99, image: gingerbread },
+    { name: "Spiced Apple Cider", description: "Warm apple cider with cinnamon, cloves, and orange zest", price: 4.49, image: cider },
+    { name: "Peppermint Mocha", description: "Chocolate espresso with peppermint, topped with candy cane pieces", price: 5.29, image: peppermint },
+    { name: "Caramel Brulée Latte", description: "Espresso with caramel brulée sauce and whipped cream", price: 5.49, image:caramel },
+    { name: "Cherry Blossom Tea", description: "Seasonal white tea infused with cherry blossom flavors", price: 4.29, image: cherry },
+    { name: "Irish Cream Cold Brew", description: "Cold brew with Irish cream flavored foam", price: 4.79, image: irish },
+    { name: "Lavender Honey Latte", description: "Espresso with lavender-infused honey and steamed milk", price: 5.19, image: lavender }
   ];
 
   const desserts = [
-    { name: "Chocolate Cake", description: "Rich, moist chocolate cake with ganache frosting", price: 5.99, image: "cake.jpg" },
-    { name: "New York Cheesecake", description: "Creamy classic cheesecake with graham cracker crust", price: 6.49, image: "cheesecake.jpg" },
-    { name: "Tiramisu", description: "Italian dessert with coffee-soaked ladyfingers and mascarpone", price: 5.99, image: "tiramisu.jpg" },
-    { name: "French Macarons", description: "Assorted flavors of delicate almond meringue cookies", price: 4.49, image: "macarons.jpg" },
-    { name: "Apple Pie", description: "Warm spiced apple filling in a flaky butter crust", price: 5.49, image: "applepie.jpg" },
-    { name: "Fudge Brownie", description: "Dense chocolate brownie with walnuts and fudge chunks", price: 3.99, image: "brownie.jpg" },
-    { name: "Lemon Tart", description: "Tangy lemon curd in a sweet shortbread shell", price: 4.79, image: "lemontart.jpg" },
-    { name: "Crème Brûlée", description: "Creamy vanilla custard with caramelized sugar top", price: 5.29, image: "creme.jpg" },
-    { name: "Carrot Cake", description: "Spiced carrot cake with cream cheese frosting", price: 5.49, image: "carrot.jpg" },
-    { name: "Fresh Fruit Tart", description: "Buttery pastry filled with custard and topped with seasonal fruits", price: 5.99, image: "fruit.jpg" }
+    { name: "Chocolate Cake", description: "Rich, moist chocolate cake with ganache frosting", price: 5.99, image: cake },
+    { name: "New York Cheesecake", description: "Creamy classic cheesecake with graham cracker crust", price: 6.49, image: cheesecake },
+    { name: "Tiramisu", description: "Italian dessert with coffee-soaked ladyfingers and mascarpone", price: 5.99, image: tiramisu },
+    { name: "French Macarons", description: "Assorted flavors of delicate almond meringue cookies", price: 4.49, image: macarons },
+    { name: "Apple Pie", description: "Warm spiced apple filling in a flaky butter crust", price: 5.49, image: applepie },
+    { name: "Fudge Brownie", description: "Dense chocolate brownie with walnuts and fudge chunks", price: 3.99, image: brownie },
+    { name: "Lemon Tart", description: "Tangy lemon curd in a sweet shortbread shell", price: 4.79, image: lemontart },
+    { name: "Crème Brûlée", description: "Creamy vanilla custard with caramelized sugar top", price: 5.29, image: creme },
+    { name: "Carrot Cake", description: "Spiced carrot cake with cream cheese frosting", price: 5.49, image: carrot },
+    { name: "Fresh Fruit Tart", description: "Buttery pastry filled with custard and topped with seasonal fruits", price: 5.99, image: fruit }
   ];
 
   return (
