@@ -141,7 +141,7 @@ const Menu = () => {
   ];
 
   const hotDrinks = [
-    { name: "Espresso", description: "Rich and intense single shot of premium coffee", price: 2.99, image: {cappuccino} },
+    { name: "Espresso", description: "Rich and intense single shot of premium coffee", price: 2.99, image: cappuccino },
     { name: "Green Tea", description: "Premium Japanese green tea, perfectly steeped", price: 3.29, image: "greentea.jpg" },
     { name: "Hot Chocolate", description: "Rich chocolate with steamed milk and whipped cream", price: 4.29, image: "hotchocolate.jpg" },
     { name: "Macchiato", description: "Espresso marked with a dollop of foamed milk", price: 3.49, image: "macchiato.jpg" },
