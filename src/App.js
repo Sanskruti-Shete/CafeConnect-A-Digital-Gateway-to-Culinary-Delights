@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
@@ -9,7 +9,8 @@ import Careers from "./pages/Careers";
 import Apply from "./pages/Apply";
 import Location from "./pages/Location";
 import Menu from "./pages/Menu";
-
+//import Cart from "./pages/Cart";
+//import { CartProvider } from "./pages/CartContext";
 
 function App() {
   return (

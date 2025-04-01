@@ -212,12 +212,11 @@ const Menu = () => {
       <nav className="navbar1">
         <div className="logo1">CafeConnect</div>
         <div className="navlinks1">
-          <Link to="/home">Home</Link>
-          <Link to="/menu">Menu</Link>
-          <Link to="/about">About</Link>
-          <Link to="#contact">Contact</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/account"><FontAwesomeIcon icon={faUser} /> Account</Link>
+            <a href="/">Home</a>
+            <a href="/menu">Menu</a>
+            <a href="/about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="/login">Login</a>
         </div>
       </nav>
 
@@ -237,7 +236,7 @@ const Menu = () => {
 
       {/* Bestsellers Sliding Window */}
       <section className="bestsellers">
-        <h2 className="sectiontitle">Bestsellers</h2>
+        <h2 className="sectiontitle1">Bestsellers</h2>
         <div className="container">
           <div className="slide" ref={bestsellerRef} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
             {bestsellerItems.map((item, index) => (
@@ -274,12 +273,12 @@ const Menu = () => {
       </section>
 
       {/* Hot Drinks section */}
-      <section className="menusection">
-        <h2 className="sectiontitle">Hot Drinks</h2>
-        <div className="menucontainer">
-          <div className="menuitems" ref={hotDrinksRef}>
+      <section className="menusection1">
+        <h2 className="sectiontitle1">Hot Drinks</h2>
+        <div className="menucontainer1">
+          <div className="menuitems1" ref={hotDrinksRef}>
             {hotDrinks.map((item, index) => (
-              <div className="menuitem" key={index}>
+              <div className="menuitem1" key={index}>
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
@@ -301,12 +300,12 @@ const Menu = () => {
       </section>
 
       {/* Cold Drinks */}
-      <section className="menusection">
-        <h2 className="sectiontitle">Cold Drinks</h2>
-        <div className="menucontainer">
-          <div className="menuitems" ref={coldDrinksRef}>
+      <section className="menusection1">
+        <h2 className="sectiontitle1">Cold Drinks</h2>
+        <div className="menucontainer1">
+          <div className="menuitems1" ref={coldDrinksRef}>
             {coldDrinks.map((item, index) => (
-              <div className="menuitem" key={index}>
+              <div className="menuitem1" key={index}>
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
@@ -328,12 +327,12 @@ const Menu = () => {
       </section>
 
       {/* Food Items */}
-      <section className="menusection">
-        <h2 className="sectiontitle">Food Items</h2>
-        <div className="menucontainer">
-          <div className="menuitems" ref={foodRef}>
+      <section className="menusection1">
+        <h2 className="sectiontitle1">Food Items</h2>
+        <div className="menucontainer1">
+          <div className="menuitems1" ref={foodRef}>
             {foodItems.map((item, index) => (
-              <div className="menuitem" key={index}>
+              <div className="menuitem1" key={index}>
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
@@ -345,22 +344,22 @@ const Menu = () => {
               </div>
             ))}
           </div>
-          <button className="srollbtn prev" onClick={() => scroll(foodRef, 'left')}>
+          <button className="scrollbtn prev" onClick={() => scroll(foodRef, 'left')}>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
-          <button className="srollbtn next" onClick={() => scroll(foodRef, 'right')}>
+          <button className="scrollbtn next" onClick={() => scroll(foodRef, 'right')}>
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
       </section>
 
       {/* Season Specials */}
-      <section className="menusection">
-        <h2 className="sectiontitle">Seasonal Specials</h2>
-        <div className="menucontainer">
-          <div className="menuitems" ref={seasonalSpecialsRef}>
+      <section className="menusection1">
+        <h2 className="sectiontitle1">Seasonal Specials</h2>
+        <div className="menucontainer1">
+          <div className="menuitems1" ref={seasonalSpecialsRef}>
             {seasonalSpecials.map((item, index) => (
-              <div className="menuitem" key={index}>
+              <div className="menuitem1" key={index}>
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
@@ -372,22 +371,22 @@ const Menu = () => {
               </div>
             ))}
           </div>
-          <button className="srollbtn prev" onClick={() => scroll(seasonalSpecialsRef, 'left')}>
+          <button className="scrollbtn prev" onClick={() => scroll(seasonalSpecialsRef, 'left')}>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
-          <button className="srollbtn next" onClick={() => scroll(seasonalSpecialsRef, 'right')}>
+          <button className="scrollbtn next" onClick={() => scroll(seasonalSpecialsRef, 'right')}>
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
       </section>
 
       {/* Desserts Section */}
-      <section className="menusection">
-        <h2 className="sectiontitle">Desserts</h2>
-        <div className="menucontainer">
-          <div className="menuitems" ref={dessertsRef}>
+      <section className="menusection1">
+        <h2 className="sectiontitle1">Desserts</h2>
+        <div className="menucontainer1">
+          <div className="menuitems1" ref={dessertsRef}>
             {desserts.map((item, index) => (
-              <div className="menuitem" key={index}>
+              <div className="menuitem1" key={index}>
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
@@ -399,10 +398,10 @@ const Menu = () => {
               </div>
             ))}
           </div>
-          <button className="srollbtn prev" onClick={() => scroll(dessertsRef, 'left')}>
+          <button className="scrollbtn prev" onClick={() => scroll(dessertsRef, 'left')}>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
-          <button className="srollbtn next" onClick={() => scroll(dessertsRef, 'right')}>
+          <button className="scrollbtn next" onClick={() => scroll(dessertsRef, 'right')}>
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
