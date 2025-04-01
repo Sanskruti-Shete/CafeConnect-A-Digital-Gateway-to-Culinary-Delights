@@ -6,9 +6,19 @@ import "./Chatbot.css";
 class Chatbot extends Component {
   constructor(props) {
     super(props);
+    // Add a welcome message to the initial state
     this.state = {
       isChatOpen: false,
-      chatMessages: [],
+      chatMessages: [
+        {
+          text: "Hi there! I'm the CafeConnect assistant. How can I help you today?",
+          sender: "bot",
+          time: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        }
+      ],
       isTyping: false,
     };
     this.chatBodyRef = React.createRef();
@@ -50,10 +60,21 @@ class Chatbot extends Component {
     this.GEMINI_API_URL = process.env.REACT_APP_GEMINI_API_URL;
   }
 
+  componentDidMount() {
+    // Set up initial scroll position when chat opens
+    if (this.chatBodyRef.current) {
+      this.chatBodyRef.current.scrollTop = this.chatBodyRef.current.scrollHeight;
+    }
+  }
+
   componentDidUpdate(prevProps, prevState) {
-    // Auto-scroll to bottom of chat when new messages arrive
-    if (this.chatBodyRef && prevState.chatMessages.length !== this.state.chatMessages.length) {
-      this.chatBodyRef.scrollTop = this.chatBodyRef.scrollHeight;
+    // Auto-scroll to bottom of chat when new messages arrive or when chat opens
+    if (
+      this.chatBodyRef.current && 
+      (prevState.chatMessages.length !== this.state.chatMessages.length || 
+       (!prevState.isChatOpen && this.state.isChatOpen))
+    ) {
+      this.chatBodyRef.current.scrollTop = this.chatBodyRef.current.scrollHeight;
     }
   }
 
@@ -205,15 +226,15 @@ class Chatbot extends Component {
             <h3>CafeConnect Assistant</h3>
             <span onClick={this.toggleChat}>×</span>
           </div>
-          <div className="chatbody" ref={(el) => (this.chatBodyRef = el)}>
+          <div className="chatbody" ref={this.chatBodyRef}>
             {chatMessages.map((msg, index) => (
               <div key={index} className={`chatmessage ${msg.sender}-message`}>
-                <div>{msg.text}</div>
+                <div className="messagetext">{msg.text}</div>
                 <div className="messagetime">{msg.time}</div>
               </div>
             ))}
             {isTyping && (
-              <div className="chatmessage botmessage typingindicator">
+              <div className="chatmessage bot-message typingindicator">
                 Typing...
               </div>
             )}

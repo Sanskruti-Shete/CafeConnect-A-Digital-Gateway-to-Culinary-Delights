@@ -111,7 +111,7 @@
 
 .typing-indicator {
   font-style: italic;
-  color: #888;
+  color: brown;
   background-color: #f0f0f0;
   align-self: flex-start;
 }
@@ -206,7 +206,7 @@
   margin-bottom: 5px;
 }
 
-.user-message {
+.usermessage {
   background-color: #4a90e2;
   color: white;
   align-self: flex-end;
@@ -214,7 +214,7 @@
   border-bottom-right-radius: 4px;
 }
 
-.bot-message {
+.botmessage {
   background-color: #e0e0e0;
   color: #333;
   align-self: flex-start;
@@ -231,7 +231,7 @@
 }
 
 /* Typing Indicator */
-.typing-indicator {
+.typingindicator {
   background-color: #f0f0f0;
   color: #888;
   font-style: italic;
