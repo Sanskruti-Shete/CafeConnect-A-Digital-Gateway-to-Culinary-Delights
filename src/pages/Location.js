@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import { GoogleMap, LoadScript, Marker, InfoWindow } from "@react-google-maps/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faWifi,
@@ -19,7 +18,8 @@ import {
   faInstagram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import "../styles/Location.css"
+import "../styles/Location.css";
+import CafeMap from "../components/CafeMap"; 
 
 import cafe1 from '../images/cafe1.jpg';
 import cafe2 from '../images/cafe2.jpg';
@@ -273,18 +273,18 @@ class LocationsPage extends Component {
         <div className="locationspage">
           {/* Navbar */}
           <nav className="navbar">
-          <div className="logo">CafeConnect</div>
-          <div className="navlinks">
-            <Link to="/">Home</Link>
-            <Link to="/menu">Menu</Link>
-            <Link to="/about">About</Link>
-            <a href="#contact">Contact</a>
-            <Link to="/login">Login</Link>
-            <Link to="/account">
-              <FontAwesomeIcon icon={faUser} /> Account
-            </Link>
-          </div>
-        </nav>
+            <div className="logo">CafeConnect</div>
+            <div className="navlinks">
+              <Link to="/">Home</Link>
+              <Link to="/menu">Menu</Link>
+              <Link to="/about">About</Link>
+              <a href="#contact">Contact</a>
+              <Link to="/login">Login</Link>
+              <Link to="/account">
+                <FontAwesomeIcon icon={faUser} /> Account
+              </Link>
+            </div>
+          </nav>
 
           {/* Hero Section */}
           <section className="hero4">
@@ -312,52 +312,14 @@ class LocationsPage extends Component {
           {/* Map Section with Google Maps Integration */}
           <section className="mapsection">
             <h2 className="sectiontitle">Find Us On The Map</h2>
-            <LoadScript
-              googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
-            >
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={this.state.mapCenter}
-                zoom={this.state.mapZoom}
-                options={mapOptions}
-              >
-                {this.state.cafeLocations.map((location) => (
-                  <Marker
-                    key={location.id}
-                    position={{ lat: location.lat, lng: location.lng }}
-                    onClick={() => this.handleLocationSelect(location)}
-                  />
-                ))}
-
-                {this.state.selectedLocation && (
-                  <InfoWindow
-                    position={{
-                      lat: this.state.selectedLocation.lat,
-                      lng: this.state.selectedLocation.lng,
-                    }}
-                    onCloseClick={() =>
-                      this.setState({ selectedLocation: null })
-                    }
-                  >
-                    <div className="infowindow">
-                      <h3>{this.state.selectedLocation.name}</h3>
-                      <p>{this.state.selectedLocation.address}</p>
-                      <p>{this.state.selectedLocation.hours.weekdays}</p>
-                      <p>{this.state.selectedLocation.phone}</p>
-                      <button
-                        onClick={() =>
-                          this.handleDirectionsClick(
-                            this.state.selectedLocation
-                          )
-                        }
-                      >
-                        Get Directions
-                      </button>
-                    </div>
-                  </InfoWindow>
-                )}
-              </GoogleMap>
-            </LoadScript>
+            <CafeMap 
+              cafeLocations={this.state.cafeLocations}
+              mapCenter={this.state.mapCenter}
+              mapZoom={this.state.mapZoom}
+              mapContainerStyle={mapContainerStyle}
+              mapOptions={mapOptions}
+              onLocationSelect={this.handleLocationSelect}
+            />
           </section>
 
           {/* Footer */}
