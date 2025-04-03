@@ -18,6 +18,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 import "../styles/Menu.css";
+import CurrencyConverter from '../components/CurrencyConvertor'; // Import the currency converter component
 import cappuccino from "../images/cappuccino.png";
 import americano from "../images1/americano.jpg";
 import applepie from "../images1/applepie.jpg";
@@ -80,6 +81,11 @@ const Menu = () => {
   const [toastMessage, setToastMessage] = useState('');
   const [showCustomizationModal, setShowCustomizationModal] = useState(false);
   const [currentItem, setCurrentItem] = useState(null);
+  
+  // Currency conversion states
+  const [currentCurrency, setCurrentCurrency] = useState('USD');
+  const [currencyRate, setCurrencyRate] = useState(1);
+  const [currencySymbol, setCurrencySymbol] = useState('$');
 
   // Refs for carousel scrolling
   const hotDrinksRef = useRef(null);
@@ -99,12 +105,28 @@ const Menu = () => {
     setCartCount(savedCart.length);
   }, []);
 
+  // Update prices based on selected currency
+  const updatePrices = (currency, rate, symbol) => {
+    setCurrentCurrency(currency);
+    setCurrencyRate(rate);
+    setCurrencySymbol(symbol || '$');
+  };
+
   const addToCart = (name, price) => {
+    // Convert price to current currency before adding to cart
+    const convertedPrice = price * currencyRate;
+    
     // Get existing cart or initialize empty array
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Add new item to cart
-    cart.push({ name, price, quantity: 1 });
+    // Add new item to cart with currency info
+    cart.push({ 
+      name, 
+      price: convertedPrice, 
+      quantity: 1,
+      currency: currentCurrency,
+      symbol: currencySymbol
+    });
     
     // Save back to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -274,6 +296,9 @@ const Menu = () => {
         </div>
       </nav>
 
+      {/* Currency Converter Component */}
+      <CurrencyConverter updatePrices={updatePrices} />
+
       {/* Cart counter */}
       <Link to="/cart" className="cartlink">
         <div className="cartcounter">
@@ -286,6 +311,22 @@ const Menu = () => {
       <div className={`toast ${showToast ? 'visible' : ''}`} id="toast">
         <FontAwesomeIcon icon={faCheckCircle} />
         <span id="toastmessage">{toastMessage}</span>
+      </div>
+
+      {/* Currency indicator */}
+      <div style={{
+        position: 'fixed',
+        left: '20px',
+        top: '100px',
+        zIndex: 1000,
+        background: '#2c1810',
+        color: 'white',
+        padding: '8px 12px',
+        borderRadius: '4px',
+        fontSize: '14px',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.2)'
+      }}>
+        Prices in: {currentCurrency}
       </div>
 
       {/* Bestsellers Sliding Window */}
@@ -306,6 +347,9 @@ const Menu = () => {
                 <div className="content">
                   <div className="name">{item.name}</div>
                   <div className="description">{item.description}</div>
+                  <div className="price" style={{ fontSize: '1.25rem', marginBottom: '10px' }}>
+                    {currencySymbol}{(item.price * currencyRate).toFixed(2)}
+                  </div>
                   <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
                     <FontAwesomeIcon icon={faCartPlus} />
                     Add to Cart
@@ -336,7 +380,7 @@ const Menu = () => {
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <div className="price">${item.price.toFixed(2)}</div>
+                <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
                 <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
@@ -363,7 +407,7 @@ const Menu = () => {
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <div className="price">${item.price.toFixed(2)}</div>
+                <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
                 <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
@@ -390,7 +434,7 @@ const Menu = () => {
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <div className="price">${item.price.toFixed(2)}</div>
+                <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
                 <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
@@ -417,7 +461,7 @@ const Menu = () => {
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <div className="price">${item.price.toFixed(2)}</div>
+                <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
                 <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
@@ -444,7 +488,7 @@ const Menu = () => {
                 <img src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <div className="price">${item.price.toFixed(2)}</div>
+                <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
                 <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
