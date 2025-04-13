@@ -8,7 +8,7 @@ import Reserve from "./pages/Reserve";
 import Careers from "./pages/Careers";
 import Apply from "./pages/Apply";
 import Location from "./pages/Location";
-import Menu from "./pages/Menu";
+import Menu from "./pages/Menu1";
 import Cart from "./pages/Cart";
 
 function App() {

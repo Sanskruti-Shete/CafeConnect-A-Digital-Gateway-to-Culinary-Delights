@@ -75,7 +75,7 @@ import strawberry from "../images1/strawberry.jpg";
 import spinach from "../images1/spinach.jpg";
 import tiramisu from "../images1/tiramisu.jpg";
 
-const Menu = () => {
+const Menu1 = () => {
   const [cartCount, setCartCount] = useState(0);
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
@@ -101,8 +101,21 @@ const Menu = () => {
 
   useEffect(() => {
     // Load cart count from localStorage when component mounts
-    const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
-    setCartCount(savedCart.length);
+    const updateCartCount = () => {
+      const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+      setCartCount(savedCart.length);
+    };
+    
+    updateCartCount();
+    
+    // Listen for cart updates from other components
+    window.addEventListener('cartUpdate', updateCartCount);
+    window.addEventListener('storage', updateCartCount);
+    
+    return () => {
+      window.removeEventListener('cartUpdate', updateCartCount);
+      window.removeEventListener('storage', updateCartCount);
+    };
   }, []);
 
   // Update prices based on selected currency
@@ -112,27 +125,40 @@ const Menu = () => {
     setCurrencySymbol(symbol || '$');
   };
 
-  const addToCart = (name, price) => {
+  const addToCart = (name, price, image) => {
     // Convert price to current currency before adding to cart
     const convertedPrice = price * currencyRate;
     
     // Get existing cart or initialize empty array
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    // Add new item to cart with currency info
-    cart.push({ 
-      name, 
-      price: convertedPrice, 
-      quantity: 1,
-      currency: currentCurrency,
-      symbol: currencySymbol
-    });
+    // Check if item already exists in cart
+    const existingItemIndex = cart.findIndex(item => item.name === name);
+    
+    if (existingItemIndex !== -1) {
+      // If item exists, increment quantity
+      cart[existingItemIndex].quantity += 1;
+    } else {
+      // Add new item to cart with currency info and unique ID
+      cart.push({ 
+        id: Date.now(), // Use timestamp as a simple unique ID
+        name, 
+        price: convertedPrice, 
+        quantity: 1,
+        currency: currentCurrency,
+        symbol: currencySymbol,
+        image: image // Store image reference if needed
+      });
+    }
     
     // Save back to localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
     
     // Update cart count
     setCartCount(cart.length);
+    
+    // Dispatch event to notify other components
+    window.dispatchEvent(new Event('cartUpdate'));
     
     // Show toast notification
     setToastMessage(`${name} added to cart!`);
@@ -144,8 +170,8 @@ const Menu = () => {
     }, 3000);
   };
 
-  const openCustomizationModal = (name, price) => {
-    setCurrentItem({ name, price });
+  const openCustomizationModal = (name, price, image) => {
+    setCurrentItem({ name, price, image });
     setShowCustomizationModal(true);
   };
 
@@ -156,7 +182,9 @@ const Menu = () => {
 
   const addCustomizedItemToCart = () => {
     // Add customization logic here
-    addToCart(currentItem.name, currentItem.price);
+    if (currentItem) {
+      addToCart(currentItem.name, currentItem.price, currentItem.image);
+    }
     closeCustomizationModal();
   };
 
@@ -350,7 +378,7 @@ const Menu = () => {
                   <div className="price" style={{ fontSize: '1.25rem', marginBottom: '10px' }}>
                     {currencySymbol}{(item.price * currencyRate).toFixed(2)}
                   </div>
-                  <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
+                  <button className="addtocart" onClick={() => addToCart(item.name, item.price, item.image)}>
                     <FontAwesomeIcon icon={faCartPlus} />
                     Add to Cart
                   </button>
@@ -381,7 +409,7 @@ const Menu = () => {
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
                 <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
-                <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
+                <button className="addtocart" onClick={() => addToCart(item.name, item.price, item.image)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
                 </button>
@@ -408,7 +436,7 @@ const Menu = () => {
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
                 <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
-                <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
+                <button className="addtocart" onClick={() => addToCart(item.name, item.price, item.image)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
                 </button>
@@ -435,7 +463,7 @@ const Menu = () => {
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
                 <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
-                <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
+                <button className="addtocart" onClick={() => addToCart(item.name, item.price, item.image)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
                 </button>
@@ -462,7 +490,7 @@ const Menu = () => {
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
                 <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
-                <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
+                <button className="addtocart" onClick={() => addToCart(item.name, item.price, item.image)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
                 </button>
@@ -489,7 +517,7 @@ const Menu = () => {
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
                 <div className="price">{currencySymbol}{(item.price * currencyRate).toFixed(2)}</div>
-                <button className="addtocart" onClick={() => addToCart(item.name, item.price)}>
+                <button className="addtocart" onClick={() => addToCart(item.name, item.price, item.image)}>
                   <FontAwesomeIcon icon={faCartPlus} />
                   Add to Cart
                 </button>
@@ -538,5 +566,5 @@ const Menu = () => {
     </div>
   );
 };
-
-export default Menu;
+export default Menu1;
+      

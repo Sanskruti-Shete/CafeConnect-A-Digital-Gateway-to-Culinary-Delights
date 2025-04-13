@@ -5,30 +5,31 @@ import { faUser, faTrash } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Cart.css';
 
 const Cart = () => {
-  // Initial cart state based on your example items
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: 'Classic Cappuccino',
-      price: 4.99,
-      quantity: 1,
-      image: 'cappuccino.jpg'
-    },
-    {
-      id: 2,
-      name: 'Butter Croissant',
-      price: 3.49,
-      quantity: 2,
-      image: 'croissant.jpg'
-    }
-  ]);
-
+  const [cartItems, setCartItems] = useState([]);
   const [summary, setSummary] = useState({
     subtotal: 0,
     tax: 0,
     deliveryFee: 2.00,
     total: 0
   });
+
+  // Load cart data from localStorage when component mounts
+  useEffect(() => {
+    const loadCart = () => {
+      const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+      setCartItems(savedCart);
+    };
+
+    loadCart();
+
+    // Add event listener for storage changes
+    window.addEventListener('storage', loadCart);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener('storage', loadCart);
+    };
+  }, []);
 
   // Update totals whenever cart items change
   useEffect(() => {
@@ -49,19 +50,29 @@ const Cart = () => {
   };
 
   const updateQuantity = (id, change) => {
-    setCartItems(items => 
-      items.map(item => {
-        if (item.id === id) {
-          const newQuantity = item.quantity + change;
-          return newQuantity > 0 ? { ...item, quantity: newQuantity } : item;
-        }
-        return item;
-      })
-    );
+    const updatedCart = cartItems.map(item => {
+      if (item.id === id) {
+        const newQuantity = item.quantity + change;
+        return newQuantity > 0 ? { ...item, quantity: newQuantity } : item;
+      }
+      return item;
+    });
+
+    setCartItems(updatedCart);
+    
+    // Update localStorage and trigger storage event
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event('cartUpdate'));
   };
 
   const removeItem = (id) => {
-    setCartItems(items => items.filter(item => item.id !== id));
+    const updatedCart = cartItems.filter(item => item.id !== id);
+    
+    setCartItems(updatedCart);
+    
+    // Update localStorage and trigger storage event
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    window.dispatchEvent(new Event('cartUpdate'));
   };
 
   return (
@@ -91,10 +102,12 @@ const Cart = () => {
                   <div className="item-image-info">
                     <div className="item-name-display">
                       <h3>{item.name}</h3>
-                      <h3 className="item-price-display">${(item.price * item.quantity).toFixed(2)}</h3>
+                      <h3 className="item-price-display">
+                        {item.symbol || '$'}{(item.price * item.quantity).toFixed(2)}
+                      </h3>
                     </div>
                     <div className="item-subinfo">
-                      <p className="item-price">${item.price.toFixed(2)}</p>
+                      <p className="item-price">{item.symbol || '$'}{item.price.toFixed(2)}</p>
                       <div className="quantity-controls-container">
                         <div className="quantity-button-group">
                           <button 
