@@ -9,8 +9,7 @@ import Careers from "./pages/Careers";
 import Apply from "./pages/Apply";
 import Location from "./pages/Location";
 import Menu from "./pages/Menu";
-//import Cart from "./pages/Cart";
-//import { CartProvider } from "./pages/CartContext";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -26,6 +25,7 @@ function App() {
         <Route path="/apply" element={<Apply />} />
         <Route path="/location" element={<Location />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
