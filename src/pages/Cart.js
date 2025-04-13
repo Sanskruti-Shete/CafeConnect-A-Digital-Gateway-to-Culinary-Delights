@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faTrash, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import "../styles/Cart.css"; // We'll need to extract the CSS to a separate file
+import { faUser, faTrash } from '@fortawesome/free-solid-svg-icons';
+import '../styles/Cart.css';
 
 const Cart = () => {
   // Initial cart state based on your example items
@@ -67,18 +67,18 @@ const Cart = () => {
   return (
     <>
       <nav className="navbar">
-                <div className="logo">CafeConnect</div>
-                <div className="navlinks">
-                  <Link to="/">Home</Link>
-                  <Link to="/menu">Menu</Link>
-                  <Link to="/about">About</Link>
-                  <a href="#contact">Contact</a>
-                  <Link to="/login">Login</Link>
-                  <Link to="/account">
-                    <FontAwesomeIcon icon={faUser} /> Account
-                  </Link>
-                </div>
-              </nav>
+          <div className="logo">CafeConnect</div>
+          <div className="navlinks">
+            <Link to="/">Home</Link>
+            <Link to="/menu">Menu</Link>
+            <Link to="/about">About</Link>
+            <a href="#contact">Contact</a>
+            <Link to="/login">Login</Link>
+            <Link to="/account">
+              <FontAwesomeIcon icon={faUser} /> Account
+            </Link>
+          </div>
+        </nav>
 
       <div className="cart-container">
         <h1 className="cart-title">Your Cart</h1>
@@ -88,36 +88,38 @@ const Cart = () => {
             <div className="cart-items">
               {cartItems.map((item) => (
                 <div className="cart-item" key={item.id}>
-                  <img src={item.image} alt={item.name} />
-                  <div className="item-details">
-                    <div>
-                      <h3 className="item-title">{item.name}</h3>
-                      <p className="item-price">${item.price.toFixed(2)}</p>
+                  <div className="item-image-info">
+                    <div className="item-name-display">
+                      <h3>{item.name}</h3>
+                      <h3 className="item-price-display">${(item.price * item.quantity).toFixed(2)}</h3>
                     </div>
-                    <div className="quantity-controls">
-                      <button 
-                        className="quantity-btn" 
-                        onClick={() => updateQuantity(item.id, -1)}
-                      >
-                        -
-                      </button>
-                      <span>{item.quantity}</span>
-                      <button 
-                        className="quantity-btn" 
-                        onClick={() => updateQuantity(item.id, 1)}
-                      >
-                        +
-                      </button>
-                      <button 
-                        className="remove-btn"
-                        onClick={() => removeItem(item.id)}
-                      >
-                        <FontAwesomeIcon icon={faTrash} />
-                        Remove
-                      </button>
+                    <div className="item-subinfo">
+                      <p className="item-price">${item.price.toFixed(2)}</p>
+                      <div className="quantity-controls-container">
+                        <div className="quantity-button-group">
+                          <button 
+                            className="quantity-btn decrease"
+                            onClick={() => updateQuantity(item.id, -1)}
+                          >
+                            -
+                          </button>
+                          <span className="quantity-display">{item.quantity}</span>
+                          <button 
+                            className="quantity-btn increase"
+                            onClick={() => updateQuantity(item.id, 1)}
+                          >
+                            +
+                          </button>
+                        </div>
+                        <button 
+                          className="remove-btn"
+                          onClick={() => removeItem(item.id)}
+                        >
+                          <FontAwesomeIcon icon={faTrash} /> Remove
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <div className="item-total">${(item.price * item.quantity).toFixed(2)}</div>
                 </div>
               ))}
             </div>
@@ -147,7 +149,7 @@ const Cart = () => {
           </div>
         ) : (
           <div className="empty-cart">
-            <FontAwesomeIcon icon={faShoppingCart} />
+            <i className="fas fa-shopping-cart"></i>
             <h2>Your cart is empty</h2>
             <p>Looks like you haven't added anything to your cart yet.</p>
             <Link to="/menu" className="continue-shopping">Continue Shopping</Link>
