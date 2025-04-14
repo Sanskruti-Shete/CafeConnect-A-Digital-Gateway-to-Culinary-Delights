@@ -12,12 +12,23 @@ const Cart = () => {
     deliveryFee: 2.00,
     total: 0
   });
+  const [personalization, setPersonalization] = useState({
+    name: '',
+    fontStyle: 'Arial',
+    fontSize: 'medium'
+  });
 
   // Load cart data from localStorage when component mounts
   useEffect(() => {
     const loadCart = () => {
       const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
       setCartItems(savedCart);
+      
+      // Load personalization if available
+      const savedPersonalization = JSON.parse(localStorage.getItem('personalization'));
+      if (savedPersonalization) {
+        setPersonalization(savedPersonalization);
+      }
     };
 
     loadCart();
@@ -74,6 +85,23 @@ const Cart = () => {
     localStorage.setItem('cart', JSON.stringify(updatedCart));
     window.dispatchEvent(new Event('cartUpdate'));
   };
+
+  const handlePersonalizationChange = (e) => {
+    const { name, value } = e.target;
+    const updatedPersonalization = { ...personalization, [name]: value };
+    
+    setPersonalization(updatedPersonalization);
+    localStorage.setItem('personalization', JSON.stringify(updatedPersonalization));
+  };
+
+  // Check if cart has coffee items
+  const hasCoffeeItems = cartItems.some(item => 
+    item.category === 'coffee' || 
+    item.name.toLowerCase().includes('coffee') ||
+    item.name.toLowerCase().includes('latte') ||
+    item.name.toLowerCase().includes('espresso') ||
+    item.name.toLowerCase().includes('cappuccino')
+  );
 
   return (
     <>
@@ -136,6 +164,74 @@ const Cart = () => {
                 </div>
               ))}
             </div>
+
+            {hasCoffeeItems && (
+              <div className="personalization-section">
+                <h2>Personalize Your Cup</h2>
+                <p>We'll print your name on your coffee cup!</p>
+                
+                <div className="personalization-form">
+                  <div className="form-group">
+                    <label htmlFor="name">Name on Cup:</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={personalization.name}
+                      onChange={handlePersonalizationChange}
+                      placeholder="Enter your name"
+                      maxLength="20"
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <label htmlFor="fontStyle">Font Style:</label>
+                    <select
+                      id="fontStyle"
+                      name="fontStyle"
+                      value={personalization.fontStyle}
+                      onChange={handlePersonalizationChange}
+                    >
+                      <option value="Arial">Arial</option>
+                      <option value="Times New Roman">Times New Roman</option>
+                      <option value="Courier New">Courier New</option>
+                      <option value="Verdana">Verdana</option>
+                      <option value="Georgia">Georgia</option>
+                      <option value="Brush Script MT">Brush Script</option>
+                    </select>
+                  </div>
+                  
+                  <div className="form-group">
+                    <label htmlFor="fontSize">Font Size:</label>
+                    <select
+                      id="fontSize"
+                      name="fontSize"
+                      value={personalization.fontSize}
+                      onChange={handlePersonalizationChange}
+                    >
+                      <option value="small">Small</option>
+                      <option value="medium">Medium</option>
+                      <option value="large">Large</option>
+                    </select>
+                  </div>
+                </div>
+                
+                <div className="cup-preview">
+                  <div className="coffee-cup">
+                    <div 
+                      className="cup-name" 
+                      style={{ 
+                        fontFamily: personalization.fontStyle, 
+                        fontSize: personalization.fontSize === 'small' ? '14px' : 
+                                personalization.fontSize === 'medium' ? '18px' : '22px'
+                      }}
+                    >
+                      {personalization.name || 'Your Name'}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div className="order-summary">
               <h2 className="summary-title">Order Summary</h2>

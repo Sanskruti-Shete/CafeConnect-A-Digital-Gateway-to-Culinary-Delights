@@ -260,3 +260,82 @@ footer {
 .social-links a:hover {
     color: #8b4513;
 }
+/* Personalization Section Styles */
+.personalization-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .personalization-section h2 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .personalization-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .form-group input, 
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .cup-preview {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .coffee-cup {
+    width: 150px;
+    height: 180px;
+    background: linear-gradient(to right, #8B4513, #A67B5B);
+    border-radius: 10px 10px 70px 70px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .coffee-cup::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: #D2B48C;
+    border-radius: 5px 5px 60px 60px;
+    z-index: 1;
+  }
+  
+  .cup-name {
+    position: relative;
+    z-index: 2;
+    color: #5D4037;
+    background-color: #FFF8E1;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 80%;
+    word-break: break-word;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
