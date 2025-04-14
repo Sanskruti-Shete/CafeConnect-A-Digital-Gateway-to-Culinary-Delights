@@ -25,7 +25,7 @@ function App() {
         <Route path="/apply" element={<Apply />} />
         <Route path="/location" element={<Location />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="cart" element={<Cart />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   );
