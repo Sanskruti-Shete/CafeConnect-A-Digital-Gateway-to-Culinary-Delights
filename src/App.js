@@ -10,7 +10,8 @@ import Apply from "./pages/Apply";
 import Location from "./pages/Location";
 import Menu from "./pages/Menu1";
 import Cart from "./pages/Cart";
-
+import Checkout from "./pages/Checkout";
+import Confirmation from "./pages/Confirmation";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/location" element={<Location />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
   );

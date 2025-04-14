@@ -155,9 +155,9 @@ const Cart = () => {
                 <span>Total</span>
                 <span>${summary.total.toFixed(2)}</span>
               </div>
-              <button className="checkout-btn">
-                Proceed to Checkout
-              </button>
+              <Link to="/checkout" className="checkout-btn">
+              Proceed to Checkout
+              </Link>
             </div>
           </div>
         ) : (

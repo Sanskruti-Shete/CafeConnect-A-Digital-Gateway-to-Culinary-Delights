@@ -1,0 +1,150 @@
+/* Confirmation.css */
+
+.confirmation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 20px;
+  }
+  
+  .confirmation-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+  }
+  
+  .confirmation-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .success-icon {
+    font-size: 50px;
+    color: #5a8d3b;
+    margin-bottom: 20px;
+  }
+  
+  .confirmation-header h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .confirmation-header p {
+    color: #6c757d;
+    font-size: 16px;
+  }
+  
+  .order-details {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  
+  .detail-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .detail-label {
+    color: #6c757d;
+    font-size: 14px;
+  }
+  
+  .detail-value {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .detail-row.total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .detail-row.total .detail-label,
+  .detail-row.total .detail-value {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  
+  .order-items {
+    margin-bottom: 30px;
+  }
+  
+  .order-items h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .item-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  .item-detail {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .item-quantity {
+    color: #6c757d;
+  }
+  
+  .item-name {
+    color: #333;
+  }
+  
+  .item-price {
+    font-weight: 500;
+  }
+  
+  .confirmation-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .home-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #5a8d3b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+  
+  .home-button:hover {
+    background-color: #4a7831;
+  }
+  
+  @media (max-width: 480px) {
+    .confirmation-card {
+      padding: 20px;
+    }
+    
+    .confirmation-header h1 {
+      font-size: 24px;
+    }
+    
+    .success-icon {
+      font-size: 40px;
+    }
+  }
