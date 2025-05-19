@@ -12,7 +12,7 @@ import Menu from "./pages/Menu1";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Confirmation from "./pages/Confirmation";
-
+import Product from './pages/Product';
 function App() {
   return (
     <BrowserRouter>
@@ -30,6 +30,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/confirmation" element={<Confirmation />} />
+        <Route path="/products" element={<Product />} />
       </Routes>
     </BrowserRouter>
   );
